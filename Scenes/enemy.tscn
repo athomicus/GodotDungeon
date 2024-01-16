@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6ofbe5o3v3gx"]
+
+[ext_resource type="Script" path="res://Scenes/basic_enemy.gd" id="1_4hj2g"]
+[ext_resource type="Texture2D" uid="uid://b806gjja53xps" path="res://kenney_tinydungeon/Tiles/tile_0124.png" id="2_luceo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snjdj"]
+size = Vector2(8, 12)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_4hj2g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_luceo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_snjdj")
