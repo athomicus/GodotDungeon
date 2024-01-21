@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpdy80nlp08cq"]
+
+[ext_resource type="Script" path="res://Node2D.gd" id="1_x2vse"]
+[ext_resource type="Texture2D" uid="uid://ddw2yyo8dlols" path="res://icon.svg" id="2_luo6m"]
+
+[node name="direction_angle_test" type="Node2D"]
+script = ExtResource("1_x2vse")
+
+[node name="mouse" type="Node2D" parent="."]
+position = Vector2(-5, -5)
+
+[node name="sword" type="Node2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(232.285, 51)
+texture = ExtResource("2_luo6m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
+visible = false
+modulate = Color(0, 0, 1, 1)
+position = Vector2(-166.285, 29)
+scale = Vector2(0.57, 0.57)
+texture = ExtResource("2_luo6m")
