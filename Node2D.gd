@@ -1,8 +1,15 @@
 extends Node2D
 
 
+func print_args(arg1, arg2, arg3 = "t"):
+	prints(arg1, arg2, arg3)
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var callable = Callable(self, "print_args")
+	callable.call( 1,2 )
 	var mouse = $mouse
 	
 	var sword = $sword

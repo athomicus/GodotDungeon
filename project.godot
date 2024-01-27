@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SoundManager="*res://Scripts/sound/sound_manager.gd"
+
 [display]
 
 window/size/viewport_width=384
@@ -51,6 +55,7 @@ up={
 2d_physics/layer_1="Terrain"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
+2d_physics/layer_4="EnemyCollision"
 
 [rendering]
 
