@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6ofbe5o3v3gx"]
+[gd_scene load_steps=7 format=3 uid="uid://b6ofbe5o3v3gx"]
 
 [ext_resource type="Script" path="res://Scenes/basic_enemy.gd" id="1_4hj2g"]
+[ext_resource type="PackedScene" uid="uid://hbp3agei7loi" path="res://Scenes/vial_drop_component.tscn" id="2_0d8mv"]
+[ext_resource type="PackedScene" uid="uid://caw4dvca25own" path="res://Scenes/health_component.tscn" id="2_0vauv"]
 [ext_resource type="Texture2D" uid="uid://b806gjja53xps" path="res://kenney_tinydungeon/Tiles/tile_0124.png" id="2_luceo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0oh3"]
@@ -11,7 +13,13 @@ size = Vector2(14, 15)
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 8
 collision_mask = 9
+motion_mode = 1
 script = ExtResource("1_4hj2g")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_0vauv")]
+
+[node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_0d8mv")]
+health_component = NodePath("../HealthComponent")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

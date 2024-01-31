@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc7ku2q05vokl"]
+[gd_scene load_steps=3 format=3 uid="uid://dc7ku2q05vokl"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_manager.gd" id="1_h528v"]
+[ext_resource type="PackedScene" uid="uid://folf5bfl2q0u" path="res://UI/arena_time_manager.tscn" id="2_p8jbm"]
 
 [node name="EnemyManager" type="Node"]
 script = ExtResource("1_h528v")
+basic_enemy_scene = ExtResource("2_p8jbm")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.5
 autostart = true

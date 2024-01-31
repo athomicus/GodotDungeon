@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-const  MAX_SPEED = 75
+const  MAX_SPEED = 35
+@onready var health_component: HealthComponent = $HealthComponent
 
 func _ready():
 	$Area2D.area_entered.connect(on_area_entered)
@@ -20,4 +21,5 @@ func get_direction_to_player():
 	return Vector2.ZERO
 	
 func on_area_entered(other_area: Area2D):
+	health_component.damage(100)
 	queue_free()

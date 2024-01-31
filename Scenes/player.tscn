@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw65aqtyiapj8"]
+[gd_scene load_steps=6 format=3 uid="uid://dw65aqtyiapj8"]
 
 [ext_resource type="Texture2D" uid="uid://crmciyarf1f08" path="res://kenney_tinydungeon/Tiles/tile_0096.png" id="1_4s7tf"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_67v2x"]
 [ext_resource type="PackedScene" uid="uid://cmn472c48fjx1" path="res://Scenes/sword_ability_controller.tscn" id="2_qrxij"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1nt8"]
+size = Vector2(32, 26)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qvsiw"]
 radius = 7.07107
@@ -14,6 +17,14 @@ script = ExtResource("1_67v2x")
 [node name="ability_manager" type="Node" parent="."]
 
 [node name="Sword_AbilityController" parent="ability_manager" instance=ExtResource("2_qrxij")]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_a1nt8")
+debug_color = Color(0.52549, 0.568627, 0.176471, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
